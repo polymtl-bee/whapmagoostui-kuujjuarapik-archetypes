@@ -1,0 +1,1086 @@
+*********************************************************************************
+*  TRNBuild   3.0.294
+*********************************************************************************
+*   BUILDING DESCRIPTIONS FILE TRNSYS
+*   FOR BUILDING:   C:\Users\annie\Google Drive\Academics\Polytechnique\Research\JBPS\Residential Archetypes\WBG-SF\WBG-SF.inf
+*   GET BY WORKING WITH TRNBuild 1.0 for Windows
+*********************************************************************************
+*
+*--------------------------------------------------------------------------------
+*  C o m m e n t s
+*--------------------------------------------------------------------------------
+*#C Originally created by TRNSIDF Version 1.81
+*--------------------------------------------------------------------------------
+*  P r o j e c t
+*--------------------------------------------------------------------------------
+*+++ PROJECT
+*+++ TITLE=UNDEFINED
+*+++ DESCRIPTION=UNDEFINED
+*+++ CREATED=UNDEFINED
+*+++ ADDRESS=UNDEFINED
+*+++ CITY=UNDEFINED
+*+++ SWITCH=UNDEFINED
+*--------------------------------------------------------------------------------
+*  P r o p e r t i e s
+*--------------------------------------------------------------------------------
+PROPERTIES
+ DENSITY=1.204 : CAPACITY=1.012 : PRESSURE=101325.000 : HVAPOR=2454.0 : SIGMA=2.041e-007 : RTEMP=293.15
+*--- convective heat transfer coefficient calculation ---------------------
+ KFLOORUP=7.2 : EFLOORUP=0.31 : KFLOORDOWN=3.888 : EFLOORDOWN=0.31
+ KCEILUP=7.2 : ECEILUP=0.31 : KCEILDOWN=3.888 : ECEILDOWN=0.31
+ KVERTICAL=5.76 : EVERTICAL=0.3
+*--- radiance parameters -------------------
+ SCENE_ROTATION_ANGLE=0 : GROUND_IDS= : GROUND_REFLECTANCE=0.2 : SHADER_REFLECTANCE=0
+ CALC_MODE=RAD : LATITUDE=48 : LONGITUDE=-9.2 : TIME_ZONE=-15 : SITE_ELEVATION=200
+ AB=5 : AD=1000 : AS=20 : AR=300 : AA=0.1
+ LR=6 : ST=0.15 : SJ=1 : LW=0.004 : DJ=0 : DS=0.2 : DR=2 : DP=512
+*--- comfort parameters -------------------
+ DIAM-SENSOR=0.07 : EPS-SENSOR=0.82 : REFL-SENSOR=0.47 : ELV_AIRSPEED1=0.3 : ELV_AIRSPEED2=0.7 : ELV_AIRSPEED3=1.2
+*--- other -------------------
+ FSCAL_TREGENZA=MEDIUM : SHM_MODE=0 : SURFGRID=0.2
+*--- daylight  -------------------
+ UDIMIN=100 : UDIMAX=2000 : DAMIN=300
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+TYPES
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  L a y e r s
+*--------------------------------------------------------------------------------
+LAYER Wall_R-12_2x4_@406mm
+ CONDUCTIVITY=  0.215 : CAPACITY= 1.5671 : DENSITY= 156.08 : PERT=      0 : PENRT=      0
+LAYER Wall_R-9_2x4_@406mm
+ CONDUCTIVITY=  0.237 : CAPACITY= 1.5671 : DENSITY= 156.08 : PERT=      0 : PENRT=      0
+LAYER Ceil_R-15_2x4_@406mm
+ CONDUCTIVITY=  0.161 : CAPACITY= 1.5671 : DENSITY= 156.08 : PERT=      0 : PENRT=      0
+LAYER Ceil_Flr_2x6_@406mm_NoIns
+ CONDUCTIVITY=  2.491 : CAPACITY= 1.6219 : DENSITY=  80.99 : PERT=      0 : PENRT=      0
+LAYER Flr_R-9_2x4_@406mm
+ CONDUCTIVITY=  0.231 : CAPACITY= 1.5671 : DENSITY= 156.08 : PERT=      0 : PENRT=      0
+LAYER WallAirGap
+ RESISTANCE=   0.0444 : PERT=      0 : PENRT=      0
+LAYER CeilAirGap
+ RESISTANCE=   0.0417 : PERT=      0 : PENRT=      0
+LAYER XPS
+ CONDUCTIVITY=  0.103 : CAPACITY=   1.21 : DENSITY=     42 : PERT=      0 : PENRT=      0
+LAYER GypsumBoard
+ CONDUCTIVITY=  0.571 : CAPACITY=   1.09 : DENSITY=    801 : PERT=      0 : PENRT=      0
+LAYER Plywood
+ CONDUCTIVITY=  0.414 : CAPACITY=   1.21 : DENSITY=    545 : PERT=      0 : PENRT=      0
+LAYER Concrete
+ CONDUCTIVITY=  7.059 : CAPACITY=    0.9 : DENSITY=   2243 : PERT=      0 : PENRT=      0
+LAYER LooseFillAtticIns
+ CONDUCTIVITY=  0.192 : CAPACITY=   0.96 : DENSITY=     19 : PERT=      0 : PENRT=      0
+LAYER Roofing
+ CONDUCTIVITY=  0.583 : CAPACITY=   1.26 : DENSITY=   1121 : PERT=      0 : PENRT=      0
+*--------------------------------------------------------------------------------
+*  I n p u t s
+*--------------------------------------------------------------------------------
+INPUTS ACH Pstove PFridge PClothesWasher PDryer Pplugloads Plights lights_bsmt dhwLoss occupancy Tsetheat TGround Tbnd_bottom Tbnd_front Tbnd_back Tbnd_left Tbnd_right HRV_flow HRV_Ts HRV_hum shower_sensible shower_latent bath_sensible sinks_sensible sinks_latent
+INPUTS_DESCRIPTION
+ ACH : 1/hr : air changes per hour
+ Pstove : any : Input
+ PFridge : any : Input
+ PClothesWasher : any : Input
+ PDryer : any : Input
+ Pplugloads : any : Input
+ Plights : any : Input
+ lights_bsmt : any : Input
+ dhwLoss : any : Input
+ occupancy : any : Input
+ Tsetheat : any : Input
+ TGround : °C : Ground temperature
+ Tbnd_bottom : °C : Boundary temperature at slab bottom
+ Tbnd_front : any : Boundary temperature at basement front
+ Tbnd_back : any : Boundary temperature at basement back
+ Tbnd_left : any : Boundary temperature at basement left
+ Tbnd_right : any : Boundary temperature at basement right
+ HRV_flow : any : Input
+ HRV_Ts : any : Input
+ HRV_hum : any : Input
+ shower_sensible : any : Input
+ shower_latent : any : Input
+ bath_sensible : any : Input
+ sinks_sensible : any : Input
+ sinks_latent : any : Input
+*--------------------------------------------------------------------------------
+*  S c h e d u l e s
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  C O N S T R U C T I O N (Wall, Floor, Ceiling,..)
+*--------------------------------------------------------------------------------
+CONSTRUCTION EXT_WALL
+ LAYERS   = GypsumBoard WallAirGap Wall_R-12_2x4_@406mm XPS   
+ THICKNESS= 0.013       0          0.089                0.032 
+ ABS-FRONT= 0.25  : ABS-BACK= 0.6  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 64
+CONSTRUCTION ceiling
+ LAYERS   = GypsumBoard CeilAirGap Ceil_R-15_2x4_@406mm LooseFillAtticIns 
+ THICKNESS= 0.013       0          0.089                0.153             
+ ABS-FRONT= 0.25  : ABS-BACK= 0.6  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 11
+CONSTRUCTION SlabBelowGrade
+ LAYERS   = Concrete XPS   
+ THICKNESS= 0.15     0.025 
+ ABS-FRONT= 0.6   : ABS-BACK= 0.6  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 0
+CONSTRUCTION interzone_flr
+ LAYERS   = GypsumBoard Flr_R-9_2x4_@406mm Plywood 
+ THICKNESS= 0.013       0.089              0.013   
+ ABS-FRONT= 0.6   : ABS-BACK= 0.6  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 11
+CONSTRUCTION Basementwall
+ LAYERS   = Plywood Wall_R-9_2x4_@406mm XPS   Concrete 
+ THICKNESS= 0.02    0.089               0.026 0.2      
+ ABS-FRONT= 0.6   : ABS-BACK= 0.6  
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 0
+CONSTRUCTION attic_roof
+ LAYERS   = Ceil_Flr_2x6_@406mm_NoIns Plywood Roofing 
+ THICKNESS= 0.14                      0.02    0.01    
+ ABS-FRONT= 0.6   : ABS-BACK= 0.85 
+ EPS-FRONT= 0.9   : EPS-BACK= 0.9  
+ HFRONT   = 11 : HBACK= 64
+*--------------------------------------------------------------------------------
+*  W i n d o w s
+*--------------------------------------------------------------------------------
+WINDOW ASH_A17.18C
+ WINID=7183 : HINSIDE=11 : HOUTSIDE=64 : SLOPE=-999 : SPACID=0 : WWID=0 : WHEIG=0 : FFRAME=0.199 : UFRAME=10.008 : ABSFRAME=0.9 : RISHADE=0 : RESHADE=0 : REFLISHADE=0.5 : REFLOSHADE=0.1 : CCISHADE=0.5 : EPSFRAME=0.9 : EPSISHADE=0.9 : ITSHADECLOSE=648 : ITSHADEOPEN=576 : FLOWTOAIRNODE=1 : PERT=0 : PENRT=0 : RADMATERIAL=undefined : RADMATERIAL_SHD1=undefined
+WINDOW Door
+ WINID=7003 : HINSIDE=11 : HOUTSIDE=64 : SLOPE=-999 : SPACID=0 : WWID=0 : WHEIG=0 : FFRAME=0.9 : UFRAME=5.67 : ABSFRAME=0.6 : RISHADE=0 : RESHADE=0 : REFLISHADE=0.5 : REFLOSHADE=0.1 : CCISHADE=0.5 : EPSFRAME=0.9 : EPSISHADE=0.9 : ITSHADECLOSE=648 : ITSHADEOPEN=576 : FLOWTOAIRNODE=1 : PERT=0 : PENRT=0 : RADMATERIAL=undefined : RADMATERIAL_SHD1=undefined
+*--------------------------------------------------------------------------------
+*  G a i n s / L o s s e s
+*--------------------------------------------------------------------------------
+GAIN clotheswasher
+ CONVECTIVE=INPUT 0.4*PClothesWasher : RADIATIVE=INPUT 0.4*PClothesWasher : HUMIDITY=0 : ELPOWERFRAC=1.25 :  ABSOLUTE : CATEGORY=EQUIPMENT
+GAIN dhwloss
+ CONVECTIVE=INPUT 0.5*dhwLoss : RADIATIVE=INPUT 0.5*dhwLoss : HUMIDITY=0 : ELPOWERFRAC=0 :  ABSOLUTE : CATEGORY=MISCELLANEOUS
+GAIN dryer
+ CONVECTIVE=INPUT 0.1*PDryer : RADIATIVE=INPUT 0.1*PDryer : HUMIDITY=INPUT 2.2e-005*PDryer : ELPOWERFRAC=5 :  ABSOLUTE : CATEGORY=EQUIPMENT
+GAIN fridge
+ CONVECTIVE=INPUT 0.75*PFridge : RADIATIVE=INPUT 0.25*PFridge : HUMIDITY=0 : ELPOWERFRAC=1 :  ABSOLUTE : CATEGORY=EQUIPMENT
+GAIN plugloads
+ CONVECTIVE=INPUT 0.46*Pplugloads : RADIATIVE=INPUT 0.46*Pplugloads : HUMIDITY=INPUT 8.831e-006*Pplugloads : ELPOWERFRAC=1.087 :  AREA_RELATED : CATEGORY=EQUIPMENT
+GAIN occupants
+ CONVECTIVE=INPUT 113.4*occupancy : RADIATIVE=INPUT 156.6*occupancy : HUMIDITY=INPUT 0.0874*occupancy : ELPOWERFRAC=0 :  ABSOLUTE : CATEGORY=PEOPLE
+GAIN stove
+ CONVECTIVE=0 : RADIATIVE=INPUT 0.4*Pstove : HUMIDITY=INPUT 0.0001325*Pstove : ELPOWERFRAC=2.5 :  ABSOLUTE : CATEGORY=EQUIPMENT
+GAIN lights_main
+ CONVECTIVE=INPUT 0.5*Plights : RADIATIVE=INPUT 0.5*Plights : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=LIGHTS
+GAIN lights_bsmt
+ CONVECTIVE=INPUT 0.5*lights_bsmt : RADIATIVE=INPUT 0.5*lights_bsmt : HUMIDITY=0 : ELPOWERFRAC=1 :  AREA_RELATED : CATEGORY=LIGHTS
+GAIN shower
+ CONVECTIVE=INPUT 1*shower_sensible : RADIATIVE=0 : HUMIDITY=INPUT 1*shower_latent : ELPOWERFRAC=0 :  ABSOLUTE : CATEGORY=MISCELLANEOUS
+GAIN bath
+ CONVECTIVE=INPUT 1*bath_sensible : RADIATIVE=0 : HUMIDITY=0 : ELPOWERFRAC=0 :  ABSOLUTE : CATEGORY=MISCELLANEOUS
+GAIN sinks
+ CONVECTIVE=INPUT 1*sinks_sensible : RADIATIVE=0 : HUMIDITY=INPUT 1*sinks_latent : ELPOWERFRAC=0 :  ABSOLUTE : CATEGORY=MISCELLANEOUS
+*--------------------------------------------------------------------------------
+*  C o m f o r t
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  I n f i l t r a t i o n
+*--------------------------------------------------------------------------------
+INFILTRATION INFIL001
+ AIRCHANGE=INPUT 1*ACH
+INFILTRATION Infil_attic
+ AIRCHANGE=INPUT 6*ACH+0.2
+*--------------------------------------------------------------------------------
+*  V e n t i l a t i o n
+*--------------------------------------------------------------------------------
+VENTILATION ventflr1
+ TEMPERATURE=INPUT 1*HRV_Ts
+ AIRFLOW=INPUT 0.6*HRV_flow
+ SPECFANPOWER=0
+ SENSHR=0
+ RELMINHUM=INPUT 1*HRV_hum
+ RELMAXHUM=INPUT 1*HRV_hum
+ CALCQAHU=0
+VENTILATION ventbsmt
+ TEMPERATURE=INPUT 1*HRV_Ts
+ AIRFLOW=INPUT 0.4*HRV_flow
+ SPECFANPOWER=0
+ SENSHR=0
+ RELMINHUM=INPUT 1*HRV_hum
+ RELMAXHUM=INPUT 1*HRV_hum
+ CALCQAHU=0
+*--------------------------------------------------------------------------------
+*  C o o l i n g
+*--------------------------------------------------------------------------------
+*--------------------------------------------------------------------------------
+*  H e a t i n g
+*--------------------------------------------------------------------------------
+HEATING Flr1Heating
+ ON=INPUT 1*Tsetheat
+ POWER=999999999
+ HUMIDITY=0
+ RRAD=0
+ ELPOWERFRAC=0
+ AREA_RELATED_POWER=0
+HEATING BsmtHeating
+ ON=19
+ POWER=999999999
+ HUMIDITY=0
+ RRAD=0
+ ELPOWERFRAC=0
+ AREA_RELATED_POWER=0
+*--------------------------------------------------------------------------------
+*  D a y l i g h t   C o n t r o l 
+*--------------------------------------------------------------------------------
+*
+*--------------------------------------------------------------------------------
+*  Z o n e s
+*--------------------------------------------------------------------------------
+ZONES Flr1 Attic Basement
+*--------------------------------------------------------------------------------
+*  O r i e n t a t i o n s
+*--------------------------------------------------------------------------------
+HEMISPHERE NORTHERN
+ORIENTATIONS H_0_0 S_0_20 S_0_90 W_90_90 N_180_20 N_180_90 E_270_90
+INTERNAL_CALCULATION H_0_0 S_0_20 S_0_90 W_90_90 N_180_20 N_180_90 E_270_90
+*
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+BUILDING
+*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*
+*--------------------------------------------------------------------------------
+*  Z o n e  Flr1  /  A i r n o d e  Flr1
+*--------------------------------------------------------------------------------
+ZONE Flr1
+RADIATIONMODE
+ BEAM=STANDARD : DIFFUSE=STANDARD : LONGWAVE=STANDARD : GEOMODE=3D_DATA : FSOLAIR=0
+DAYLIGHTMODE
+ DLSHADE =-1
+AIRNODE Flr1
+FLOOR        =interzone_flr : SURF=  1 : AREA=       108 : ADJACENT=Basement : ADJ_SURF=28 : BACK : GEOSURF=0.8
+CEILING      =ceiling    : SURF=  2 : AREA=       108 : ADJACENT=Attic : ADJ_SURF=20 : BACK
+WALL         =EXT_WALL   : SURF=  3 : AREA=     22.95 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.036429
+WINDOW=ASH_A17.18C : SURF=  7 : AREA=       1.5 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.002381
+WINDOW=ASH_A17.18C : SURF=  8 : AREA=      0.75 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.00119
+WINDOW=Door       : SURF=  9 : AREA=       1.8 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.002857
+WALL         =EXT_WALL   : SURF=  4 : AREA=        33 : EXTERNAL : ORI=S_0_90 : FSKY=0.5 : GEOSURF=0.052382
+WINDOW=ASH_A17.18C : SURF= 10 : AREA=       1.5 : EXTERNAL : ORI=S_0_90 : FSKY=0.5 : GEOSURF=0.002381
+WINDOW=ASH_A17.18C : SURF= 11 : AREA=       1.5 : EXTERNAL : ORI=S_0_90 : FSKY=0.5 : GEOSURF=0.002381
+WALL         =EXT_WALL   : SURF=  5 : AREA=        33 : EXTERNAL : ORI=N_180_90 : FSKY=0.5 : GEOSURF=0.052381
+WINDOW=ASH_A17.18C : SURF= 12 : AREA=       1.5 : EXTERNAL : ORI=N_180_90 : FSKY=0.5 : GEOSURF=0.002381
+WINDOW=ASH_A17.18C : SURF= 13 : AREA=       1.5 : EXTERNAL : ORI=N_180_90 : FSKY=0.5 : GEOSURF=0.002381
+WALL         =EXT_WALL   : SURF=  6 : AREA=     24.75 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.039286
+WINDOW=ASH_A17.18C : SURF= 14 : AREA=      0.75 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.00119
+WINDOW=ASH_A17.18C : SURF= 15 : AREA=      0.75 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.00119
+WINDOW=ASH_A17.18C : SURF= 16 : AREA=      0.75 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.00119
+ REGIME
+ GAIN        = fridge     : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = plugloads  : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = occupants  : SCALE= 0.9 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = stove      : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = lights_main : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = shower     : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = bath       : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = sinks      : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ INFILTRATION= INFIL001
+ VENTILATION = ventflr1
+ HEATING     = Flr1Heating
+ ADJACENT_AIRNODE= Basement : COUPL= INPUT 0.4*HRV_flow
+ CAPACITANCE = 388.8   : VOLUME= 324     : REFAREA= 108     : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 1
+*--------------------------------------------------------------------------------
+*  Z o n e  Attic  /  A i r n o d e  Attic
+*--------------------------------------------------------------------------------
+ZONE Attic
+RADIATIONMODE
+ BEAM=STANDARD : DIFFUSE=STANDARD : LONGWAVE=STANDARD : GEOMODE=3D_DATA : FSOLAIR=0
+DAYLIGHTMODE
+ DLSHADE =-1
+AIRNODE Attic
+ROOF         =attic_roof : SURF= 17 : AREA=    56.921 : EXTERNAL : ORI=S_0_20 : FSKY=0.97
+ROOF         =attic_roof : SURF= 18 : AREA=    56.921 : EXTERNAL : ORI=N_180_20 : FSKY=0.97
+WALL         =EXT_WALL   : SURF= 19 : AREA=      6.75 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.1
+FLOOR        =ceiling    : SURF= 20 : AREA=       108 : ADJACENT=Flr1 : ADJ_SURF=2 : FRONT : GEOSURF=0.8
+WALL         =EXT_WALL   : SURF= 21 : AREA=      6.75 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.1
+ REGIME
+ INFILTRATION= Infil_attic
+ CAPACITANCE = 97.2    : VOLUME= 81      : REFAREA= 108     : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 1
+*--------------------------------------------------------------------------------
+*  Z o n e  Basement  /  A i r n o d e  Basement
+*--------------------------------------------------------------------------------
+ZONE Basement
+RADIATIONMODE
+ BEAM=STANDARD : DIFFUSE=STANDARD : LONGWAVE=STANDARD : GEOMODE=3D_DATA : FSOLAIR=0
+DAYLIGHTMODE
+ DLSHADE =-1
+AIRNODE Basement
+WALL         =EXT_WALL   : SURF= 22 : AREA=      8.36 : EXTERNAL : ORI=S_0_90 : FSKY=0.5 : GEOSURF=0.019905
+WINDOW=ASH_A17.18C : SURF= 32 : AREA=      0.32 : EXTERNAL : ORI=S_0_90 : FSKY=0.5 : GEOSURF=0.000762
+WINDOW=ASH_A17.18C : SURF= 33 : AREA=      0.32 : EXTERNAL : ORI=S_0_90 : FSKY=0.5 : GEOSURF=0.000762
+WALL         =EXT_WALL   : SURF= 23 : AREA=      8.36 : EXTERNAL : ORI=N_180_90 : FSKY=0.5 : GEOSURF=0.019905
+WINDOW=ASH_A17.18C : SURF= 34 : AREA=      0.32 : EXTERNAL : ORI=N_180_90 : FSKY=0.5 : GEOSURF=0.000762
+WINDOW=ASH_A17.18C : SURF= 35 : AREA=      0.32 : EXTERNAL : ORI=N_180_90 : FSKY=0.5 : GEOSURF=0.000762
+FLOOR        =SlabBelowGrade : SURF= 24 : AREA=       108 : BOUNDARY=INPUT 1*Tbnd_bottom : GEOSURF=0.8
+WALL         =Basementwall : SURF= 25 : AREA=     11.25 : BOUNDARY=INPUT 1*Tbnd_left : GEOSURF=0.026786
+WALL         =Basementwall : SURF= 26 : AREA=     11.25 : BOUNDARY=INPUT 1*Tbnd_right : GEOSURF=0.026786
+WALL         =EXT_WALL   : SURF= 27 : AREA=      6.11 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.014548
+WINDOW=ASH_A17.18C : SURF= 36 : AREA=      0.32 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.000762
+WINDOW=ASH_A17.18C : SURF= 37 : AREA=      0.32 : EXTERNAL : ORI=W_90_90 : FSKY=0.5 : GEOSURF=0.000762
+CEILING      =interzone_flr : SURF= 28 : AREA=       108 : ADJACENT=Flr1 : ADJ_SURF=1 : FRONT
+WALL         =Basementwall : SURF= 29 : AREA=        15 : BOUNDARY=INPUT 1*Tbnd_front : GEOSURF=0.035712
+WALL         =Basementwall : SURF= 30 : AREA=        15 : BOUNDARY=INPUT 1*Tbnd_back : GEOSURF=0.035714
+WALL         =EXT_WALL   : SURF= 31 : AREA=      6.11 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.014548
+WINDOW=ASH_A17.18C : SURF= 38 : AREA=      0.32 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.000762
+WINDOW=ASH_A17.18C : SURF= 39 : AREA=      0.32 : EXTERNAL : ORI=E_270_90 : FSKY=0.5 : GEOSURF=0.000762
+ REGIME
+ GAIN        = clotheswasher : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = dryer      : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = lights_bsmt : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= 1
+ GAIN        = occupants  : SCALE= 0.1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ GAIN        = dhwloss    : SCALE= 1 : GEOPOS= 0 : SCALE2= 1 : FRAC_REFAREA= -1
+ VENTILATION = ventbsmt
+ HEATING     = BsmtHeating
+ CAPACITANCE = 259.2   : VOLUME= 216     : REFAREA= 108     : TINITIAL= 20      : PHINITIAL= 50      : WCAPR= 1
+*--------------------------------------------------------------------------------
+*  O u t p u t s
+*--------------------------------------------------------------------------------
+OUTPUTS
+ TRANSFER : TIMEBASE=1.000
+ AIRNODES = Attic 
+ NTYPES =   1 : TAIR - air temperature of airnode
+ AIRNODES = Basement 
+ NTYPES =   1 : TAIR - air temperature of airnode
+        =  30 : QHEAT - sensible heating demand of airnode (positive values)
+        = 156 : QELEQUIP - Electric energy demand of "equipment" gains of airnode [kJ/hr]
+        = 155 : QELLIGHT - Electric energy demand of "lights" gains of airnode [kJ/hr]
+        =  20 : SURF = 25, 26, 29, 30, 24,  : QCOMO - energy to the outside surface incl. conv. to the air and l-wave radiation to other surfaces or Tsky
+ AIRNODES = Flr1 
+ NTYPES =   1 : TAIR - air temperature of airnode
+        =  30 : QHEAT - sensible heating demand of airnode (positive values)
+        = 156 : QELEQUIP - Electric energy demand of "equipment" gains of airnode [kJ/hr]
+        = 155 : QELLIGHT - Electric energy demand of "lights" gains of airnode [kJ/hr]
+        =   9 : RELHUM - relativ humidity of airnode air
+*--------------------------------------------------------------------------------
+*  E n d
+*--------------------------------------------------------------------------------
+END
+
+_EXTENSION_WINPOOL_START_
+WINDOW 4.1  DOE-2 Data File : Multi Band Calculation
+Unit System : SI
+Name        : TRNSYS 15 WINDOW LIB
+Desc        : virtual (non existant or open) window
+Window ID   : 0001
+Tilt        : 90.0
+Glazings    : 1
+Frame       : 11                       2.270
+Spacer      :  1 Class1                2.330  -0.010   0.138
+Total Height: 1219.2 mm
+Total Width :  914.4 mm
+Glass Height: 1079.5 mm
+Glass Width :  774.7 mm
+Mullion     : None
+Gap        Thick   Cond  dCond    Vis   dVis   Dens   dDens     Pr     dPr
+1              0       0      0      0      0      0       0      0       0
+2              0       0      0      0      0      0       0      0       0
+3              0       0      0      0      0      0       0      0       0
+4              0       0      0      0      0      0       0      0       0
+5              0       0      0      0      0      0       0      0       0
+Angle     0    10    20    30    40    50    60    70    80    90 Hemis
+Tsol  1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 0.998 0.000 0.998
+Abs1  0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.001 0.000 0.001
+Abs2      0     0     0     0     0     0     0     0     0     0     0
+Abs3      0     0     0     0     0     0     0     0     0     0     0
+Abs4      0     0     0     0     0     0     0     0     0     0     0
+Abs5      0     0     0     0     0     0     0     0     0     0     0
+Abs6      0     0     0     0     0     0     0     0     0     0     0
+Rfsol 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 1.000 0.001
+Rbsol 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 1.000 0.001
+Tvis  1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 0.000 1.000
+Rfvis 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+Rbvis 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+SHGC  1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 0.000 1.000
+Tvis_daylight: 1
+Layer ID#         9052        0        0        0        0        0
+Tir              0.000        0        0        0        0        0
+Emis F           1.000        0        0        0        0        0
+Emis B           1.000        0        0        0        0        0
+Thickness(mm)    0.001        0        0        0        0        0
+Cond(W/m2-C     ) 999.0        0        0        0        0        0
+Spectral File     None     None     None     None     None     None
+Overall and Center of Glass Ig U-values (W/m2-C)
+Outdoor Temperature                 -17.8 C      15.6 C      26.7 C      37.8 C
+Solar      WdSpd  hcout hrout  hin
+(W/m2)     (m/s)     (W/m2-C)
+0        0.00  12.25  3.42  8.23  5.27 5.27  4.95 4.95  4.94 4.94  5.53 5.53
+0        6.71  25.47  3.33  8.29  6.26 6.26  5.73 5.73  5.68 5.68  6.46 6.46
+783        0.00  12.25  3.49  8.17  5.25 5.25  4.58 4.58  5.24 5.24  5.66 5.66
+783        6.71  25.47  3.37  8.27  6.25 6.25  5.53 5.53  5.95 5.95  6.57 6.57
+WINDOW 5.2  TRNSYS 15 Data File : Multi Band Calculation
+Unit System : SI
+Name        : TRNSYS 15 WINDOW LIB
+Desc        : code requiremen
+Window ID   : 7003
+Tilt        : 90.0
+Glazings    : 2
+Frame       : 10 CodMinGT40            9.500
+Spacer      :  1 Class1                2.330  -0.010   0.138
+Total Height: 1500.0 mm
+Total Width : 1200.0 mm
+Glass Height: 1400.0 mm
+Glass Width : 1100.0 mm
+Mullion     : None
+Gap        Thick    Cond  dCond    Vis   dVis   Dens   dDens     Pr     dPr
+1 Air       12.0 0.02407  7.760  1.722  4.940  1.292 -0.0046  0.720 -0.0002
+2              0       0      0      0      0      0       0      0       0
+3              0       0      0      0      0      0       0      0       0
+4              0       0      0      0      0      0       0      0       0
+5              0       0      0      0      0      0       0      0       0
+Angle     0    10    20    30    40    50    60    70    80    90 Hemis
+Tsol  0.107 0.109 0.106 0.103 0.099 0.093 0.079 0.054 0.024 0.000 0.086
+Abs1  0.636 0.641 0.646 0.648 0.644 0.637 0.627 0.587 0.433 0.001 0.615
+Abs2  0.136 0.138 0.138 0.136 0.133 0.128 0.118 0.096 0.053 0.000 0.121
+Abs3      0     0     0     0     0     0     0     0     0     0     0
+Abs4      0     0     0     0     0     0     0     0     0     0     0
+Abs5      0     0     0     0     0     0     0     0     0     0     0
+Abs6      0     0     0     0     0     0     0     0     0     0     0
+Rfsol 0.121 0.112 0.110 0.113 0.124 0.142 0.176 0.263 0.490 0.999 0.167
+Rbsol 0.528 0.523 0.522 0.524 0.530 0.540 0.558 0.606 0.728 0.999 0.549
+Tvis  0.285 0.288 0.281 0.272 0.262 0.245 0.208 0.143 0.062 0.000 0.228
+Rfvis 0.103 0.092 0.089 0.092 0.105 0.127 0.164 0.258 0.492 0.999 0.152
+Rbvis 0.175 0.167 0.165 0.168 0.180 0.198 0.232 0.317 0.531 0.999 0.221
+SHGC  0.230 0.233 0.230 0.227 0.221 0.211 0.190 0.148 0.081 0.000 0.198
+Tvis_daylight: 0.285
+Layer ID#          940      776        0        0        0        0
+Tir              0.000    0.000        0        0        0        0
+Emis F           0.840    0.840        0        0        0        0
+Emis B           0.032    0.032        0        0        0        0
+Thickness(mm)      5.6      5.8        0        0        0        0
+Cond(W/m2-K     ) 177.3    171.9        0        0        0        0
+Spectral File  ES672_6.AFG     ESB5.AFG         None         None         None         None
+Overall and Center of Glass Ig U-values (W/m2-K)
+Outdoor Temperature                 -17.8 C      15.6 C      26.7 C      37.8 C
+Solar      WdSpd  hcout hrout  hin
+(W/m2)     (m/s)     (W/m2-K)
+0        0.00   4.00  3.28  2.58  1.04 1.04  0.91 0.91  0.86 0.86  1.03 1.03
+0        6.71  30.84  3.20  2.65  1.19 1.19  1.00 1.00  0.94 0.94  1.13 1.13
+783        0.00   4.00  4.49  3.01  1.04 1.04  0.91 0.91  0.86 0.86  1.03 1.03
+783        6.71  30.84  3.50  2.39  1.19 1.19  1.00 1.00  0.94 0.94  1.13 1.13
+Window 5.2  v5.2.17  DOE-2 Data File : Multi Band Calculation
+Unit System : SI
+Name        : DOE-2 WINDOW LIB
+Desc        : ASH_A-17.18c
+Window ID   : 7183
+Tilt        : 90.0
+Glazings    : 2
+Frame       :  4 Wood                  2.270
+Spacer      :  1 Class1                2.330  -0.010   0.138
+Total Height: 1500.0 mm
+Total Width : 1200.0 mm
+Glass Height: 1360.3 mm
+Glass Width : 1060.3 mm
+Mullion     : None
+Gap        Thick    Cond  dCond    Vis   dVis   Dens   dDens     Pr     dPr
+1 Argon      6.4 0.01635  5.149  2.100  6.451  1.782 -0.0063  0.670 -0.0001
+2              0       0      0      0      0      0       0      0       0
+3              0       0      0      0      0      0       0      0       0
+4              0       0      0      0      0      0       0      0       0
+5              0       0      0      0      0      0       0      0       0
+Angle     0    10    20    30    40    50    60    70    80    90 Hemis
+Tsol  0.596 0.596 0.591 0.582 0.565 0.533 0.470 0.349 0.155 0.000 0.498
+Abs1  0.169 0.169 0.172 0.177 0.184 0.193 0.205 0.218 0.217 0.000 0.189
+Abs2  0.123 0.124 0.125 0.128 0.130 0.131 0.128 0.112 0.075 0.000 0.122
+Abs3      0     0     0     0     0     0     0     0     0     0     0
+Abs4      0     0     0     0     0     0     0     0     0     0     0
+Abs5      0     0     0     0     0     0     0     0     0     0     0
+Abs6      0     0     0     0     0     0     0     0     0     0     0
+Rfsol 0.112 0.112 0.111 0.113 0.120 0.142 0.197 0.320 0.553 1.000 0.180
+Rbsol 0.113 0.112 0.112 0.114 0.121 0.143 0.199 0.324 0.562 1.000 0.182
+Tvis  0.786 0.785 0.784 0.779 0.766 0.735 0.662 0.510 0.253 0.000 0.683
+Rfvis 0.144 0.144 0.144 0.147 0.157 0.184 0.253 0.403 0.661 1.000 0.229
+Rbvis 0.144 0.144 0.144 0.147 0.157 0.185 0.253 0.403 0.661 1.000 0.229
+SHGC  0.702 0.701 0.698 0.692 0.677 0.647 0.583 0.453 0.232 0.000 0.605
+Tvis_daylight: 0.786
+Layer ID#         9994      103        0        0        0        0
+Tir              0.000    0.000        0        0        0        0
+Emis F           0.840    0.840        0        0        0        0
+Emis B           0.200    0.840        0        0        0        0
+Thickness(mm)      5.7      5.7        0        0        0        0
+Cond(W/m2-K     ) 175.0    175.0        0        0        0        0
+Spectral File         None  CLEAR_6.DAT         None         None         None         None
+Overall and Center of Glass Ig U-values (W/m2-K)
+Outdoor Temperature                 -17.8 C      15.6 C      26.7 C      37.8 C
+Solar      WdSpd  hcout hrout  hin
+(W/m2)     (m/s)     (W/m2-K)
+0        0.00   4.00  3.35  2.32  1.73 1.73  1.81 1.81  1.87 1.87  1.97 1.97
+0        6.71  30.84  3.22  2.43  2.09 2.09  2.16 2.16  2.21 2.21  2.34 2.34
+783        0.00   4.00  3.68  1.92  1.73 1.73  1.81 1.81  1.87 1.87  1.97 1.97
+783        6.71  30.84  3.30  1.39  2.09 2.09  2.16 2.16  2.21 2.21  2.34 2.34
+*** END OF LIBRARY ***
+************************************************************************************************************
+*WinID   Description                              Design         U-Value g-value T-sol Rf-sol T-vis-daylight
+************************************************************************************************************
+     1   virtual (non existant or open) window    0.001            5.68  1  1  0.001  1
+  7003   code requiremen                          5.6/12/5.8       0.94  0.23  0.107  0.121  0.285
+  7183   ASH_A-17.18c                             5.7/6.4/5.7      2.21  0.702  0.596  0.112  0.786
+_EXTENSION_WINPOOL_END_
+
+_EXTENSION_BuildingGeometry_START_
+vertex 1 12.000000000000 9.000000000000 0.750000000000
+vertex 2 12.000000000000 0.000000000000 0.750000000000
+vertex 3 0.000000000000 0.000000000000 0.750000000000
+vertex 4 0.000000000000 9.000000000000 0.750000000000
+vertex 5 0.000000000000 9.000000000000 3.750000000000
+vertex 6 0.000000000000 0.000000000000 3.750000000000
+vertex 7 12.000000000000 0.000000000000 3.750000000000
+vertex 8 12.000000000000 9.000000000000 3.750000000000
+vertex 9 12.000000000000 1.500000000000 3.250000000000
+vertex 10 12.000000000000 1.500000000000 2.250000000000
+vertex 11 12.000000000000 3.000000000000 2.250000000000
+vertex 12 12.000000000000 3.000000000000 3.250000000000
+vertex 13 12.000000000000 6.750000000000 3.250000000000
+vertex 14 12.000000000000 6.750000000000 2.250000000000
+vertex 15 12.000000000000 7.500000000000 2.250000000000
+vertex 16 12.000000000000 7.500000000000 3.250000000000
+vertex 17 12.000000000000 4.500000000000 2.770000000000
+vertex 18 12.000000000000 4.500000000000 0.770000000000
+vertex 19 12.000000000000 5.400000000000 0.770000000000
+vertex 20 12.000000000000 5.400000000000 2.770000000000
+vertex 21 8.000000000000 0.000000000000 3.250000000000
+vertex 22 8.000000000000 0.000000000000 2.250000000000
+vertex 23 9.500000000000 0.000000000000 2.250000000000
+vertex 24 9.500000000000 0.000000000000 3.250000000000
+vertex 25 2.500000000000 0.000000000000 3.250000000000
+vertex 26 2.500000000000 0.000000000000 2.250000000000
+vertex 27 4.000000000000 0.000000000000 2.250000000000
+vertex 28 4.000000000000 0.000000000000 3.250000000000
+vertex 29 4.000000000000 9.000000000000 3.250000000000
+vertex 30 4.000000000000 9.000000000000 2.250000000000
+vertex 31 2.500000000000 9.000000000000 2.250000000000
+vertex 32 2.500000000000 9.000000000000 3.250000000000
+vertex 33 9.500000000000 9.000000000000 3.250000000000
+vertex 34 9.500000000000 9.000000000000 2.250000000000
+vertex 35 8.000000000000 9.000000000000 2.250000000000
+vertex 36 8.000000000000 9.000000000000 3.250000000000
+vertex 37 0.000000000000 2.250000000000 3.250000000000
+vertex 38 0.000000000000 2.250000000000 2.250000000000
+vertex 39 0.000000000000 1.500000000000 2.250000000000
+vertex 40 0.000000000000 1.500000000000 3.250000000000
+vertex 41 0.000000000000 4.875000000000 3.250000000000
+vertex 42 0.000000000000 4.875000000000 2.250000000000
+vertex 43 0.000000000000 4.125000000000 2.250000000000
+vertex 44 0.000000000000 4.125000000000 3.250000000000
+vertex 45 0.000000000000 7.500000000000 3.250000000000
+vertex 46 0.000000000000 7.500000000000 2.250000000000
+vertex 47 0.000000000000 6.750000000000 2.250000000000
+vertex 48 0.000000000000 6.750000000000 3.250000000000
+vertex 49 0.000000000000 4.500000000000 5.250000000000
+vertex 50 12.000000000000 4.500000000000 5.250000000000
+vertex 51 0.000000000000 0.000000000000 0.000000000000
+vertex 52 12.000000000000 0.000000000000 0.000000000000
+vertex 53 2.500000000000 0.000000000000 0.550000000000
+vertex 54 2.500000000000 0.000000000000 0.150000000000
+vertex 55 3.300000000000 0.000000000000 0.150000000000
+vertex 56 3.300000000000 0.000000000000 0.550000000000
+vertex 57 8.700000000000 0.000000000000 0.550000000000
+vertex 58 8.700000000000 0.000000000000 0.150000000000
+vertex 59 9.500000000000 0.000000000000 0.150000000000
+vertex 60 9.500000000000 0.000000000000 0.550000000000
+vertex 61 12.000000000000 9.000000000000 0.000000000000
+vertex 62 0.000000000000 9.000000000000 0.000000000000
+vertex 63 9.500000000000 9.000000000000 0.550000000000
+vertex 64 9.500000000000 9.000000000000 0.150000000000
+vertex 65 8.700000000000 9.000000000000 0.150000000000
+vertex 66 8.700000000000 9.000000000000 0.550000000000
+vertex 67 3.300000000000 9.000000000000 0.550000000000
+vertex 68 3.300000000000 9.000000000000 0.150000000000
+vertex 69 2.500000000000 9.000000000000 0.150000000000
+vertex 70 2.500000000000 9.000000000000 0.550000000000
+vertex 71 12.000000000000 9.000000000000 -1.250000000000
+vertex 72 12.000000000000 0.000000000000 -1.250000000000
+vertex 73 0.000000000000 0.000000000000 -1.250000000000
+vertex 74 0.000000000000 9.000000000000 -1.250000000000
+vertex 75 0.000000000000 7.500000000000 0.550000000000
+vertex 76 0.000000000000 7.500000000000 0.150000000000
+vertex 77 0.000000000000 6.700000000000 0.150000000000
+vertex 78 0.000000000000 6.700000000000 0.550000000000
+vertex 79 0.000000000000 2.300000000000 0.550000000000
+vertex 80 0.000000000000 2.300000000000 0.150000000000
+vertex 81 0.000000000000 1.500000000000 0.150000000000
+vertex 82 0.000000000000 1.500000000000 0.550000000000
+vertex 83 12.000000000000 1.500000000000 0.550000000000
+vertex 84 12.000000000000 1.500000000000 0.150000000000
+vertex 85 12.000000000000 2.300000000000 0.150000000000
+vertex 86 12.000000000000 2.300000000000 0.550000000000
+vertex 87 12.000000000000 6.700000000000 0.550000000000
+vertex 88 12.000000000000 6.700000000000 0.150000000000
+vertex 89 12.000000000000 7.500000000000 0.150000000000
+vertex 90 12.000000000000 7.500000000000 0.550000000000
+
+
+zone Flr1
+floor 1 1 2 3 4
+ceiling 2 5 6 7 8
+wall 3 7 2 1 8
+window 7 9 10 11 12
+window 8 13 14 15 16
+window 9 17 18 19 20
+wall 4 6 3 2 7
+window 10 21 22 23 24
+window 11 25 26 27 28
+wall 5 8 1 4 5
+window 12 29 30 31 32
+window 13 33 34 35 36
+wall 6 5 4 3 6
+window 14 37 38 39 40
+window 15 41 42 43 44
+window 16 45 46 47 48
+
+zone Attic
+roof 17 49 6 7 50
+roof 18 50 8 5 49
+wall 19 7 8 50
+floor 20 8 7 6 5
+wall 21 5 6 49
+
+zone Basement
+wall 22 3 51 52 2
+window 32 53 54 55 56
+window 33 57 58 59 60
+wall 23 1 61 62 4
+window 34 63 64 65 66
+window 35 67 68 69 70
+floor 24 71 72 73 74
+wall 25 62 74 73 51
+wall 26 52 72 71 61
+wall 27 4 62 51 3
+window 36 75 76 77 78
+window 37 79 80 81 82
+ceiling 28 4 3 2 1
+wall 29 51 73 72 52
+wall 30 61 71 74 62
+wall 31 2 52 61 1
+window 38 83 84 85 86
+window 39 87 88 89 90
+_EXTENSION_BuildingGeometry_END_
+
+
+_EXTENSION_VirtualSurfaceGeometry_START_
+_EXTENSION_VirtualSurfaceGeometry_END_
+
+
+_EXTENSION_ExternalShadingGeometry_START_
+
+_EXTENSION_ExternalShadingGeometry_END_
+
+
+_EXTENSION_GeoPositionGeometry_START_
+_EXTENSION_GeoPositionGeometry_END_
+
+
+_EXTENSION_DaylightSensorPoints_START_
+_EXTENSION_DaylightSensorPoints_END_
+
+
+_EXTENSION_AdditionalDaylightGeometry_START_
+_EXTENSION_AdditionalDaylightGeometry_END_
+
+
+_EXTENSION_VAMPARAMS_START_
+_EXTENSION_VAMPARAMS_END_
+
+
+
+
+
+
+
+          ***** WALL TRANSFERFUNCTION CALCULATIONS *****
+
+
+              ---------- WALL TYPE EXT_WALL                                                    ----------
+
+       THERMAL CONDUCTANCE, U=     1.26294 kJ/h m2K; U-Wert=     0.33107 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       3.1667228E+00    7.1496266E-03    1.5862178E+01    1.0000000E+00
+   1      -3.7483156E+00    1.6205466E-01   -2.5394710E+01   -8.1828078E-01
+   2       9.9100765E-01    1.6452570E-01    1.0815609E+01    9.4578617E-02
+   3      -6.1363001E-02    1.4526894E-02   -9.3887578E-01   -4.9451439E-04
+   4       2.7259349E-04    6.7563383E-05    4.1235960E-03    3.9653391E-08
+   5      -2.0032601E-08    7.4938574E-09   -2.1733020E-07
+  SUM      3.4832446E-01    3.4832446E-01    3.4832446E-01    2.7580336E-01
+
+
+              ---------- WALL TYPE ceiling                                                     ----------
+
+       THERMAL CONDUCTANCE, U=     0.70715 kJ/h m2K; U-Wert=     0.19008 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       2.1477495E+00    1.9431063E-04    1.5517700E+01    1.0000000E+00
+   1      -3.3419818E+00    2.2246636E-02   -2.8908052E+01   -1.0599501E+00
+   2       1.5042149E+00    6.5148230E-02    1.5913606E+01    2.2358762E-01
+   3      -2.0374396E-01    2.2178337E-02   -2.4811860E+00   -7.0927384E-03
+   4       4.5016894E-03    9.5376783E-04    6.8972016E-02    3.6058294E-05
+   5      -1.4967448E-05    4.0321348E-06   -3.1509444E-04   -1.0438647E-08
+   6       3.8719130E-09    1.0594253E-09    6.9991043E-08
+  SUM      1.1072532E-01    1.1072532E-01    1.1072532E-01    1.5658078E-01
+
+
+              ---------- WALL TYPE SlabBelowGrade                                              ----------
+
+       THERMAL CONDUCTANCE, U=     3.78834 kJ/h m2K; U-Wert=     0.89263 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       4.4548668E+00    1.3984599E-01    1.3467174E+02    1.0000000E+00
+   1      -3.6142716E+00    8.3974193E-01   -1.7413776E+02   -6.9550620E-01
+   2       4.0045165E-01    2.5007653E-01    4.1323482E+01    2.0760593E-02
+   3      -8.8790062E-03    2.5039803E-03   -6.2531950E-01   -1.4317320E-06
+   4       6.0659369E-07    9.6414608E-08    2.9055779E-05
+  SUM      1.2321685E+00    1.2321685E+00    1.2321685E+00    3.2525296E-01
+
+
+              ---------- WALL TYPE interzone_flr                                               ----------
+
+       THERMAL CONDUCTANCE, U=     2.27557 kJ/h m2K; U-Wert=     0.57077 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       1.4311631E+01    6.8240558E-02    1.7489557E+01    1.0000000E+00
+   1      -1.6894334E+01    7.8864448E-01   -2.1460857E+01   -4.4777280E-01
+   2       3.9662571E+00    4.1942689E-01    5.3978887E+00    1.5153513E-02
+   3      -9.2567424E-02    1.4739425E-02   -1.3564282E-01   -2.0232294E-05
+   4       8.5311254E-05    1.9812620E-05    1.2622448E-04
+  SUM      1.2910712E+00    1.2910712E+00    1.2910712E+00    5.6736048E-01
+
+
+              ---------- WALL TYPE Basementwall                                                ----------
+
+       THERMAL CONDUCTANCE, U=     1.41925 kJ/h m2K; U-Wert=     0.36947 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       1.3469832E+02    3.3734530E-07    1.6461098E+01    1.0000000E+00
+   1      -3.0954361E+02    1.2772246E-03   -4.0211625E+01   -1.7116345E+00
+   2       2.4610009E+02    2.0613386E-02    3.4463757E+01    9.2560171E-01
+   3      -8.1052170E+01    3.8869785E-02   -1.2218584E+01   -1.7126114E-01
+   4       1.0348285E+01    1.4273770E-02    1.6576039E+00    1.1086758E-02
+   5      -4.7989236E-01    1.0970893E-03   -7.6765330E-02   -1.4015583E-04
+   6       5.1391239E-03    1.5680685E-05    6.6432625E-04    4.4407216E-07
+   7      -1.2315074E-05    3.2920364E-08   -1.6412881E-06
+  SUM      7.6147303E-02    7.6147305E-02    7.6147305E-02    5.3653118E-02
+
+
+              ---------- WALL TYPE attic_roof                                                  ----------
+
+       THERMAL CONDUCTANCE, U=     8.21935 kJ/h m2K; U-Wert=     1.64476 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       2.6619358E+01    2.5660336E+00    2.0313644E+01    1.0000000E+00
+   1      -2.0497601E+01    4.4985424E+00   -1.3619203E+01   -1.1415961E-01
+   2       1.1599803E+00    2.1683247E-01    5.8719134E-01    5.1872567E-05
+   3      -2.8121420E-04    4.7446087E-05   -1.7597905E-04
+  SUM      7.2814559E+00    7.2814559E+00    7.2814559E+00    8.8589226E-01
+
+
+
+
+  ************* REQUIRED INPUTS *************
+
+
+*:InpNR   | Label                                                       | Unit       | INPUT DESCRIPTION                                                      | Old label
+
+* |    1 | TAMB                                                         | C          | ambient temperature                                                    | TAMB
+* |    2 | RELHUMAMB                                                    | %          | relative ambient humidity                                              | ARELHUM
+* |    3 | TSKY                                                         | C          | effective sky temperature for longwave radiation exchange (FSKY)       | TSKY
+* |    4 | TSGRD                                                        | C          | effective ground temperature for longwave radiation exchange (1-FSKY)  | TSGRD
+* |    5 | AZEN                                                         | degrees    | solar zenith angle                                                     | AZEN 
+* |    6 | AAZM                                                         | degrees    | solar azimuth angle (0=facing equator, 90=facing west, -90=270=facing east)  | AAZM 
+* |    7 | GRDREF                                                       | any        | ground reflectance (range 0...1)                                       | GRDREF 
+* |    8 | ACH                                                          | 1/hr       | air changes per hour                                                                                                                                                       | ACH                                     
+* |    9 | Pstove                                                       | any        | Input                                                                                                                                                                      | Pstove                                  
+* |   10 | PFridge                                                      | any        | Input                                                                                                                                                                      | PFridge                                 
+* |   11 | PClothesWasher                                               | any        | Input                                                                                                                                                                      | PClothesWasher                          
+* |   12 | PDryer                                                       | any        | Input                                                                                                                                                                      | PDryer                                  
+* |   13 | Pplugloads                                                   | any        | Input                                                                                                                                                                      | Pplugloads                              
+* |   14 | Plights                                                      | any        | Input                                                                                                                                                                      | Plights                                 
+* |   15 | lights_bsmt                                                  | any        | Input                                                                                                                                                                      | lights_bsmt                             
+* |   16 | dhwLoss                                                      | any        | Input                                                                                                                                                                      | dhwLoss                                 
+* |   17 | occupancy                                                    | any        | Input                                                                                                                                                                      | occupancy                               
+* |   18 | Tsetheat                                                     | any        | Input                                                                                                                                                                      | Tsetheat                                
+* |   19 | TGround                                                      | °C        | Ground temperature                                                                                                                                                         | TGround                                 
+* |   20 | Tbnd_bottom                                                  | °C        | Boundary temperature at slab bottom                                                                                                                                        | Tbnd_bottom                             
+* |   21 | Tbnd_front                                                   | any        | Boundary temperature at basement front                                                                                                                                     | Tbnd_front                              
+* |   22 | Tbnd_back                                                    | any        | Boundary temperature at basement back                                                                                                                                      | Tbnd_back                               
+* |   23 | Tbnd_left                                                    | any        | Boundary temperature at basement left                                                                                                                                      | Tbnd_left                               
+* |   24 | Tbnd_right                                                   | any        | Boundary temperature at basement right                                                                                                                                     | Tbnd_right                              
+* |   25 | HRV_flow                                                     | any        | Input                                                                                                                                                                      | HRV_flow                                
+* |   26 | HRV_Ts                                                       | any        | Input                                                                                                                                                                      | HRV_Ts                                  
+* |   27 | HRV_hum                                                      | any        | Input                                                                                                                                                                      | HRV_hum                                 
+* |   28 | shower_sensible                                              | any        | Input                                                                                                                                                                      | shower_sensible                         
+* |   29 | shower_latent                                                | any        | Input                                                                                                                                                                      | shower_latent                           
+* |   30 | bath_sensible                                                | any        | Input                                                                                                                                                                      | bath_sensible                           
+* |   31 | sinks_sensible                                               | any        | Input                                                                                                                                                                      | sinks_sensible                          
+* |   32 | sinks_latent                                                 | any        | Input                                                                                                                                                                      | sinks_latent                            
+
+
+
+
+  ************* DESIRED OUTPUTS *************
+
+
+*:OutNr  | Label                                                             | Unit       | ZNr  | Airnode                                          | SurfID/ComfortID | OUTPUT DESCRIPTION                                                                                              | old label
+
+* |    1 | TAIR_Attic                                                        | C          |    2 | Attic                                                        |      | air temperature of airnode                                                             | TAIR     2
+* |    2 | TAIR_Basement                                                     | C          |    3 | Basement                                                     |      | air temperature of airnode                                                             | TAIR     3
+* |    3 | QHEAT_Basement                                                    | kJ/hr      |    3 | Basement                                                     |      | heating demand                                                             | QHEAT    3
+* |    4 | QELEQUIP_Basement                                                 | kJ/hr      |    3 | Basement                                                     |      | Electric energy demand by "equipment" gains of airnode                                                             | QELEQUIP    3
+* |    5 | QELLIGHT_Basement                                                 | kJ/hr      |    3 | Basement                                                     |      | Electric energy demand by "lights" gains of airnode                                                             | QELLIGHT    3
+* |    6 | QCOMO_S25                                                         | kJ/hr      |    3 | Basement                                                     |   25 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  25
+* |    7 | QCOMO_S26                                                         | kJ/hr      |    3 | Basement                                                     |   26 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  26
+* |    8 | QCOMO_S29                                                         | kJ/hr      |    3 | Basement                                                     |   29 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  29
+* |    9 | QCOMO_S30                                                         | kJ/hr      |    3 | Basement                                                     |   30 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  30
+* |   10 | QCOMO_S24                                                         | kJ/hr      |    3 | Basement                                                     |   24 | outside surface conv-l-wave gains->FLOOR=SlabBelowGrade:KNOWN BOUNDARY                        | QCOMO  24
+* |   11 | TAIR_Flr1                                                         | C          |    1 | Flr1                                                         |      | air temperature of airnode                                                             | TAIR     1
+* |   12 | QHEAT_Flr1                                                        | kJ/hr      |    1 | Flr1                                                         |      | heating demand                                                             | QHEAT    1
+* |   13 | QELEQUIP_Flr1                                                     | kJ/hr      |    1 | Flr1                                                         |      | Electric energy demand by "equipment" gains of airnode                                                             | QELEQUIP    1
+* |   14 | QELLIGHT_Flr1                                                     | kJ/hr      |    1 | Flr1                                                         |      | Electric energy demand by "lights" gains of airnode                                                             | QELLIGHT    1
+* |   15 | RELHUM_Flr1                                                       | %          |    1 | Flr1                                                         |      | relativ humidity of airnode air                                                             | RELHUM   1
+
+
+
+              *** Used opaque construction types ***
+            (u-value incl. h_i=7.7 W/m^2 K and h_o=25 W/m^2 K)
+
+   Construction type name                                       | Total area      | u-value         | PERT            | PENRT
+                                                                | m2              | W/m2 K          | MJ/m2           | MJ/m2
+  --------------------------------------------------------------------------------------------------------------------------------------
+   EXT_WALL                                                     |         156.140 |           0.331 |           0.000 |           0.000
+   ceiling                                                      |         108.000 |           0.190 |           0.000 |           0.000
+   SlabBelowGrade                                               |         108.000 |           0.893 |           0.000 |           0.000
+   interzone_flr                                                |         108.000 |           0.571 |           0.000 |           0.000
+   Basementwall                                                 |          52.500 |           0.369 |           0.000 |           0.000
+   attic_roof                                                   |         113.842 |           1.645 |           0.000 |           0.000
+
+
+
+              *** Used window construction types ***
+            ( u-value not availble - calculated during simulation)
+
+   Construction type name                                       | Total area      | u-value         | PERT            | PENRT
+                                                                | m2              | W/m2 K          | MJ/m2           | MJ/m2
+  --------------------------------------------------------------------------------------------------------------------------------------
+   ASH_A17.18C                                                  |          13.060 |          -1.000 |           0.000 |           0.000
+   Door                                                         |           1.800 |          -1.000 |           0.000 |           0.000
+
+
+
+
+          ***** WALL TRANSFERFUNCTION CALCULATIONS *****
+
+
+              ---------- WALL TYPE EXT_WALL                                                    ----------
+
+       THERMAL CONDUCTANCE, U=     1.26294 kJ/h m2K; U-Wert=     0.33107 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       3.1667228E+00    7.1496266E-03    1.5862178E+01    1.0000000E+00
+   1      -3.7483156E+00    1.6205466E-01   -2.5394710E+01   -8.1828078E-01
+   2       9.9100765E-01    1.6452570E-01    1.0815609E+01    9.4578617E-02
+   3      -6.1363001E-02    1.4526894E-02   -9.3887578E-01   -4.9451439E-04
+   4       2.7259349E-04    6.7563383E-05    4.1235960E-03    3.9653391E-08
+   5      -2.0032601E-08    7.4938574E-09   -2.1733020E-07
+  SUM      3.4832446E-01    3.4832446E-01    3.4832446E-01    2.7580336E-01
+
+
+              ---------- WALL TYPE ceiling                                                     ----------
+
+       THERMAL CONDUCTANCE, U=     0.70715 kJ/h m2K; U-Wert=     0.19008 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       2.1477495E+00    1.9431063E-04    1.5517700E+01    1.0000000E+00
+   1      -3.3419818E+00    2.2246636E-02   -2.8908052E+01   -1.0599501E+00
+   2       1.5042149E+00    6.5148230E-02    1.5913606E+01    2.2358762E-01
+   3      -2.0374396E-01    2.2178337E-02   -2.4811860E+00   -7.0927384E-03
+   4       4.5016894E-03    9.5376783E-04    6.8972016E-02    3.6058294E-05
+   5      -1.4967448E-05    4.0321348E-06   -3.1509444E-04   -1.0438647E-08
+   6       3.8719130E-09    1.0594253E-09    6.9991043E-08
+  SUM      1.1072532E-01    1.1072532E-01    1.1072532E-01    1.5658078E-01
+
+
+              ---------- WALL TYPE SlabBelowGrade                                              ----------
+
+       THERMAL CONDUCTANCE, U=     3.78834 kJ/h m2K; U-Wert=     0.89263 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       4.4548668E+00    1.3984599E-01    1.3467174E+02    1.0000000E+00
+   1      -3.6142716E+00    8.3974193E-01   -1.7413776E+02   -6.9550620E-01
+   2       4.0045165E-01    2.5007653E-01    4.1323482E+01    2.0760593E-02
+   3      -8.8790062E-03    2.5039803E-03   -6.2531950E-01   -1.4317320E-06
+   4       6.0659369E-07    9.6414608E-08    2.9055779E-05
+  SUM      1.2321685E+00    1.2321685E+00    1.2321685E+00    3.2525296E-01
+
+
+              ---------- WALL TYPE interzone_flr                                               ----------
+
+       THERMAL CONDUCTANCE, U=     2.27557 kJ/h m2K; U-Wert=     0.57077 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       1.4311631E+01    6.8240558E-02    1.7489557E+01    1.0000000E+00
+   1      -1.6894334E+01    7.8864448E-01   -2.1460857E+01   -4.4777280E-01
+   2       3.9662571E+00    4.1942689E-01    5.3978887E+00    1.5153513E-02
+   3      -9.2567424E-02    1.4739425E-02   -1.3564282E-01   -2.0232294E-05
+   4       8.5311254E-05    1.9812620E-05    1.2622448E-04
+  SUM      1.2910712E+00    1.2910712E+00    1.2910712E+00    5.6736048E-01
+
+
+              ---------- WALL TYPE Basementwall                                                ----------
+
+       THERMAL CONDUCTANCE, U=     1.41925 kJ/h m2K; U-Wert=     0.36947 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       1.3469832E+02    3.3734530E-07    1.6461098E+01    1.0000000E+00
+   1      -3.0954361E+02    1.2772246E-03   -4.0211625E+01   -1.7116345E+00
+   2       2.4610009E+02    2.0613386E-02    3.4463757E+01    9.2560171E-01
+   3      -8.1052170E+01    3.8869785E-02   -1.2218584E+01   -1.7126114E-01
+   4       1.0348285E+01    1.4273770E-02    1.6576039E+00    1.1086758E-02
+   5      -4.7989236E-01    1.0970893E-03   -7.6765330E-02   -1.4015583E-04
+   6       5.1391239E-03    1.5680685E-05    6.6432625E-04    4.4407216E-07
+   7      -1.2315074E-05    3.2920364E-08   -1.6412881E-06
+  SUM      7.6147303E-02    7.6147305E-02    7.6147305E-02    5.3653118E-02
+
+
+              ---------- WALL TYPE attic_roof                                                  ----------
+
+       THERMAL CONDUCTANCE, U=     8.21935 kJ/h m2K; U-Wert=     1.64476 W/m2K
+              (incl. alpha_i=7.7 W/m^2 K and alpha_o=25 W/m^2 K)
+
+                        TRANSFERFUNCTION COEFFICIENTS
+   K            A              B              C              D
+
+   0       2.6619358E+01    2.5660336E+00    2.0313644E+01    1.0000000E+00
+   1      -2.0497601E+01    4.4985424E+00   -1.3619203E+01   -1.1415961E-01
+   2       1.1599803E+00    2.1683247E-01    5.8719134E-01    5.1872567E-05
+   3      -2.8121420E-04    4.7446087E-05   -1.7597905E-04
+  SUM      7.2814559E+00    7.2814559E+00    7.2814559E+00    8.8589226E-01
+
+
+
+
+  ************* REQUIRED INPUTS *************
+
+
+*:InpNR   | Label                                                       | Unit       | INPUT DESCRIPTION                                                      | Old label
+
+* |    1 | TAMB                                                         | C          | ambient temperature                                                    | TAMB
+* |    2 | RELHUMAMB                                                    | %          | relative ambient humidity                                              | ARELHUM
+* |    3 | TSKY                                                         | C          | effective sky temperature for longwave radiation exchange (FSKY)       | TSKY
+* |    4 | TSGRD                                                        | C          | effective ground temperature for longwave radiation exchange (1-FSKY)  | TSGRD
+* |    5 | AZEN                                                         | degrees    | solar zenith angle                                                     | AZEN 
+* |    6 | AAZM                                                         | degrees    | solar azimuth angle (0=facing equator, 90=facing west, -90=270=facing east)  | AAZM 
+* |    7 | GRDREF                                                       | any        | ground reflectance (range 0...1)                                       | GRDREF 
+* |    8 | ACH                                                          | 1/hr       | air changes per hour                                                                                                                                                       | ACH                                     
+* |    9 | Pstove                                                       | any        | Input                                                                                                                                                                      | Pstove                                  
+* |   10 | PFridge                                                      | any        | Input                                                                                                                                                                      | PFridge                                 
+* |   11 | PClothesWasher                                               | any        | Input                                                                                                                                                                      | PClothesWasher                          
+* |   12 | PDryer                                                       | any        | Input                                                                                                                                                                      | PDryer                                  
+* |   13 | Pplugloads                                                   | any        | Input                                                                                                                                                                      | Pplugloads                              
+* |   14 | Plights                                                      | any        | Input                                                                                                                                                                      | Plights                                 
+* |   15 | lights_bsmt                                                  | any        | Input                                                                                                                                                                      | lights_bsmt                             
+* |   16 | dhwLoss                                                      | any        | Input                                                                                                                                                                      | dhwLoss                                 
+* |   17 | occupancy                                                    | any        | Input                                                                                                                                                                      | occupancy                               
+* |   18 | Tsetheat                                                     | any        | Input                                                                                                                                                                      | Tsetheat                                
+* |   19 | TGround                                                      | °C        | Ground temperature                                                                                                                                                         | TGround                                 
+* |   20 | Tbnd_bottom                                                  | °C        | Boundary temperature at slab bottom                                                                                                                                        | Tbnd_bottom                             
+* |   21 | Tbnd_front                                                   | any        | Boundary temperature at basement front                                                                                                                                     | Tbnd_front                              
+* |   22 | Tbnd_back                                                    | any        | Boundary temperature at basement back                                                                                                                                      | Tbnd_back                               
+* |   23 | Tbnd_left                                                    | any        | Boundary temperature at basement left                                                                                                                                      | Tbnd_left                               
+* |   24 | Tbnd_right                                                   | any        | Boundary temperature at basement right                                                                                                                                     | Tbnd_right                              
+* |   25 | HRV_flow                                                     | any        | Input                                                                                                                                                                      | HRV_flow                                
+* |   26 | HRV_Ts                                                       | any        | Input                                                                                                                                                                      | HRV_Ts                                  
+* |   27 | HRV_hum                                                      | any        | Input                                                                                                                                                                      | HRV_hum                                 
+* |   28 | shower_sensible                                              | any        | Input                                                                                                                                                                      | shower_sensible                         
+* |   29 | shower_latent                                                | any        | Input                                                                                                                                                                      | shower_latent                           
+* |   30 | bath_sensible                                                | any        | Input                                                                                                                                                                      | bath_sensible                           
+* |   31 | sinks_sensible                                               | any        | Input                                                                                                                                                                      | sinks_sensible                          
+* |   32 | sinks_latent                                                 | any        | Input                                                                                                                                                                      | sinks_latent                            
+
+
+
+
+  ************* DESIRED OUTPUTS *************
+
+
+*:OutNr  | Label                                                             | Unit       | ZNr  | Airnode                                          | SurfID/ComfortID | OUTPUT DESCRIPTION                                                                                              | old label
+
+* |    1 | TAIR_Attic                                                        | C          |    2 | Attic                                                        |      | air temperature of airnode                                                             | TAIR     2
+* |    2 | TAIR_Basement                                                     | C          |    3 | Basement                                                     |      | air temperature of airnode                                                             | TAIR     3
+* |    3 | QHEAT_Basement                                                    | kJ/hr      |    3 | Basement                                                     |      | heating demand                                                             | QHEAT    3
+* |    4 | QELEQUIP_Basement                                                 | kJ/hr      |    3 | Basement                                                     |      | Electric energy demand by "equipment" gains of airnode                                                             | QELEQUIP    3
+* |    5 | QELLIGHT_Basement                                                 | kJ/hr      |    3 | Basement                                                     |      | Electric energy demand by "lights" gains of airnode                                                             | QELLIGHT    3
+* |    6 | QCOMO_S25                                                         | kJ/hr      |    3 | Basement                                                     |   25 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  25
+* |    7 | QCOMO_S26                                                         | kJ/hr      |    3 | Basement                                                     |   26 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  26
+* |    8 | QCOMO_S29                                                         | kJ/hr      |    3 | Basement                                                     |   29 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  29
+* |    9 | QCOMO_S30                                                         | kJ/hr      |    3 | Basement                                                     |   30 | outside surface conv-l-wave gains->WALL=Basementwall:KNOWN BOUNDARY                           | QCOMO  30
+* |   10 | QCOMO_S24                                                         | kJ/hr      |    3 | Basement                                                     |   24 | outside surface conv-l-wave gains->FLOOR=SlabBelowGrade:KNOWN BOUNDARY                        | QCOMO  24
+* |   11 | TAIR_Flr1                                                         | C          |    1 | Flr1                                                         |      | air temperature of airnode                                                             | TAIR     1
+* |   12 | QHEAT_Flr1                                                        | kJ/hr      |    1 | Flr1                                                         |      | heating demand                                                             | QHEAT    1
+* |   13 | QELEQUIP_Flr1                                                     | kJ/hr      |    1 | Flr1                                                         |      | Electric energy demand by "equipment" gains of airnode                                                             | QELEQUIP    1
+* |   14 | QELLIGHT_Flr1                                                     | kJ/hr      |    1 | Flr1                                                         |      | Electric energy demand by "lights" gains of airnode                                                             | QELLIGHT    1
+* |   15 | RELHUM_Flr1                                                       | %          |    1 | Flr1                                                         |      | relativ humidity of airnode air                                                             | RELHUM   1
+
+
+
+              *** Used opaque construction types ***
+            (u-value incl. h_i=7.7 W/m^2 K and h_o=25 W/m^2 K)
+
+   Construction type name                                       | Total area      | u-value         | PERT            | PENRT
+                                                                | m2              | W/m2 K          | MJ/m2           | MJ/m2
+  --------------------------------------------------------------------------------------------------------------------------------------
+   EXT_WALL                                                     |         156.140 |           0.331 |           0.000 |           0.000
+   ceiling                                                      |         108.000 |           0.190 |           0.000 |           0.000
+   SlabBelowGrade                                               |         108.000 |           0.893 |           0.000 |           0.000
+   interzone_flr                                                |         108.000 |           0.571 |           0.000 |           0.000
+   Basementwall                                                 |          52.500 |           0.369 |           0.000 |           0.000
+   attic_roof                                                   |         113.842 |           1.645 |           0.000 |           0.000
+
+
+
+              *** Used window construction types ***
+            ( u-value not availble - calculated during simulation)
+
+   Construction type name                                       | Total area      | u-value         | PERT            | PENRT
+                                                                | m2              | W/m2 K          | MJ/m2           | MJ/m2
+  --------------------------------------------------------------------------------------------------------------------------------------
+   ASH_A17.18C                                                  |          13.060 |          -1.000 |           0.000 |           0.000
+   Door                                                         |           1.800 |          -1.000 |           0.000 |           0.000
